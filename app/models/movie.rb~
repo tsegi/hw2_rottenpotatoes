@@ -1,0 +1,7 @@
+class Movie < ActiveRecord::Base
+  
+  def self.all_ratings
+    self.select(:rating).order(:rating).uniq.map(&:rating)
+  end
+  
+end
